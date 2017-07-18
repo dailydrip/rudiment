@@ -1,9 +1,13 @@
 # Activate and configure extensions
 # https://middlemanapp.com/advanced/configuration/#configuring-extensions
 
+# Autoprefixer
 activate :autoprefixer do |prefix|
   prefix.browsers = "last 2 versions"
 end
+
+# Live Reload
+activate :livereload
 
 # Layouts
 # https://middlemanapp.com/basics/layouts/
