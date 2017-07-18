@@ -11,9 +11,9 @@ footer: There is some footer info here
 <div class="content">
   <menu>
     <ul>
-      <li><a href="#">Foo</a></li>
-      <li><a href="#">Bar</a></li>
-      <li><a href="#">Baz</a></li>
+      <%- data.example.list.each do |item| %>
+        <li><a href="#"><%= item %></a></li>
+      <%- end %>
     </ul>
   </menu>
   <aside>
