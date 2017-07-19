@@ -17,6 +17,14 @@ page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
 
+# Work around for the GitHub Pages namespacing
+# First we set the local site url to be blank
+set :site_url, ""
+configure :build do
+  # second we set a folder prefix for our build
+  set :http_prefix, '/rudiment'
+end
+
 # With alternative layout
 # page '/path/to/file.html', layout: 'other_layout'
 
