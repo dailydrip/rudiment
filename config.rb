@@ -17,6 +17,24 @@ page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
 
+# Turn on our blog system
+activate :blog do |blog|
+  blog.layout = 'blog'
+  blog.prefix = 'blog'
+  blog.tag_template = 'blog/tag.html'
+  blog.calendar_template = 'blog/calendar.html'
+  blog.year_template = 'blog/calendar.html'
+  blog.month_template = 'blog/calendar.html'
+  blog.day_template = 'blog/calendar.html'
+end
+
+page 'blog/index.html', layout: 'blog'
+
+# Serve from directories instead of html files
+# Must be done after blog activation
+activate :directory_indexes
+
+# Setup for S3 Sync
 activate :s3_sync do |s3_sync|
   s3_sync.bucket                     = 'rudiments3.dailydrip.com' # The name of the S3 bucket you are targeting. This is globally unique.
   s3_sync.region                     = 'us-west-2'     # The AWS region for your bucket.
